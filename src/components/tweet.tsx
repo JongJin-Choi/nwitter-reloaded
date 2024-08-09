@@ -96,7 +96,6 @@ export default function Tweet({username,photo,tweet,userId,id}:ITweet){
             tweet={tweet}
             photo={photo}
             id={id}
-            setIsEditing={setIsEditing}
           />
         ) : (
           <Payload>{tweet}</Payload>

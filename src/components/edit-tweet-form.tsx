@@ -9,12 +9,11 @@ import {
   uploadBytes,
 } from "firebase/storage";
 
-/* export interface EditITweet {
+ export interface EditITweet {
   id: string;
   photo?: string;
   tweet: string;
-  setIsEditing: () => boolean;
-} */
+} 
 
 const Form = styled.form`
   display: flex;
@@ -71,7 +70,7 @@ const SubmitBtn = styled.input`
   }
 `;
 
-export default function EditTweetForm({ photo, tweet, id, setIsEditing }) {
+export default function EditTweetForm({ photo, tweet, id } : EditITweet) {
   const [isLoading, setIsLoading] = useState(false);
   const [editTweet, setEditTweet] = useState(tweet);
   const [editFile, setEditFile] = useState<File | null>(null);
@@ -128,7 +127,6 @@ export default function EditTweetForm({ photo, tweet, id, setIsEditing }) {
       }
       setEditTweet("");
       setEditFile(null);
-      setIsEditing(false);
     } catch (e) {
       console.log(e);
     } finally {

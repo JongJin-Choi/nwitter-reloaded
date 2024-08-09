@@ -111,7 +111,7 @@ export default function PostTweetForm(){
     <Form onSubmit={onSubmit}>
     <TextArea 
     required
-    rows={5} maxLength="180" onChange={onChange} value={tweet} placeholder="무슨일이 있었나요?"/>
+    rows={5} maxLength={180} onChange={onChange} value={tweet} placeholder="무슨일이 있었나요?"/>
     <AttachFileButton htmlFor="file">{file?"사진 추가 완료" :"사진 추가"}</AttachFileButton>
     <AttachFileInput onChange={onFileChange} type="file" id="file" accept="image/*"/>
     <SubmitBtn type="submit" value={isLoading ? "보내는 중....." : "트윗 보내기"}/>
