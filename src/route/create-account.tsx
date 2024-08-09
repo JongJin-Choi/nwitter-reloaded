@@ -3,8 +3,9 @@ import { useState } from "react";
 import { auth } from "../firebase";
 import { Link, useNavigate } from "react-router-dom";
 import { FirebaseError } from "firebase/app";
-import { Form, Input, Switcher, Title, Wrapper, Error, Errors } from "../components/auth-component";
+import { Form, Input, Switcher, Title, Wrapper, Errors } from "../components/auth-component";
 import GithubButton from "../components/github-btn";
+import GoogleButton from "../components/google-btn";
 
 
 
@@ -24,7 +25,7 @@ export default function CreateAccount(){
         }else if(name === "email"){
             setEmail(value)
         }
-        else if(name === "password"){
+        else if(name === "password"){   
             setPassword(value)
         }
     };
@@ -60,6 +61,7 @@ export default function CreateAccount(){
             계정이 있으세요?<Link to="/login"> 로그인! &rarr;</Link>
         </Switcher>
         <GithubButton/>
+        <GoogleButton/>
     </Wrapper>
     );
    }

@@ -1,10 +1,18 @@
-import { auth } from "../firebase"
+import { styled } from "styled-components";
+import PostTweetForm from "../components/post-tweet-form";
+import Timeline from "../components/timeline";
 
-export default function Home(){
-
-    const logOut = () =>{
-        auth.signOut();
-    }
-
-    return <h1><button onClick={logOut}>로그아웃</button></h1>
+const Wrapper = styled.div`
+  display: grid;
+  gap: 50px;
+  overflow-y: scroll;
+  grid-template-rows: 1fr 5fr;
+`;
+export default function Home() {
+  return (
+    <Wrapper>
+      <PostTweetForm />
+      <Timeline/>
+    </Wrapper>
+  );
 }
